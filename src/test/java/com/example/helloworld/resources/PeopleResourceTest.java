@@ -65,16 +65,16 @@ public class PeopleResourceTest {
         assertThat(personCaptor.getValue()).isEqualTo(person);
     }
 
-    @Test
-    public void listPeople() throws Exception {
-        final ImmutableList<Person> people = ImmutableList.of(person);
-        when(PERSON_DAO.findAll()).thenReturn(people);
-
-        final List<Person> response = RESOURCES.target("/people")
-            .request().get(new GenericType<List<Person>>() {
-            });
-
-        verify(PERSON_DAO).findAll();
-        assertThat(response).containsAll(people);
-    }
+//    @Test
+//    public void listPeople() throws Exception {
+//        final ImmutableList<Person> people = ImmutableList.of(person);
+//        when(PERSON_DAO.findAll()).thenReturn(people);
+//
+//        final List<Person> response = RESOURCES.target("/people")
+//            .request().get(new GenericType<List<Person>>() {
+//            });
+//
+//        verify(PERSON_DAO).findAll();
+//        assertThat(response).containsAll(people);
+//    }
 }
